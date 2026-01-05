@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4a90e2 0%, #67b8e3 100%);
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #2874a6 0%, #3498db 100%);
+    padding: 25px 40px;
+    box-shadow: 0 4px 15px rgba(40, 116, 166, 0.3);
+    z-index: 100;
+}
+
+header h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    margin-top: 90px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 90px;
+    width: 300px;
+    height: calc(100vh - 90px);
+    background: linear-gradient(180deg, #1a5490 0%, #2874a6 100%);
+    padding: 40px 30px;
+    box-shadow: 4px 0 15px rgba(26, 84, 144, 0.3);
+    overflow-y: auto;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+    border: 5px solid white;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+.identity {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.identity h3 {
+    color: #1a5490;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.identity p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.identity strong {
+    color: #34495e;
+}
+
+main {
+    margin-left: 300px;
+    padding: 40px 60px;
+    max-width: 900px;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+}
+
+main::-webkit-scrollbar {
+    width: 10px;
+}
+
+main::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2874a6 0%, #3498db 100%);
+    border-radius: 10px;
+}
+
+.content-box {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(40, 116, 166, 0.2);
+    margin-bottom: 30px;
+}
+
+.content-box h2 {
+    color: #1a5490;
+    margin-bottom: 25px;
+    font-size: 28px;
+    border-bottom: 3px solid #5dade2;
+    padding-bottom: 10px;
+}
+
+.content-box p {
+    color: #444;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 16px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+    }
+    main {
+        margin-left: 0;
+        height: auto;
+    }
+    .container {
+        flex-direction: column;
+        margin-top: 90px;
+    }
+}
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
