@@ -17,15 +17,38 @@ header {
     right: 0;
     background: linear-gradient(90deg, #2874a6 0%, #3498db 100%);
     padding: 25px 40px;
-    box-shadow: 0 4px 15px rgba(40, 116, 166, 0.3);
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
 
 header h1 {
     color: white;
     font-size: 32px;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    /* Transition dan border-radius bulat dihapus agar lebih simpel */
+}
+
+.btn-new {
+    background: #ffffff !important; 
+    color: #1a5490 !important;
+    border-radius: 5px; /* Kotak biasa, bukan kapsul */
 }
 
 .container {
@@ -41,7 +64,6 @@ header h1 {
     height: calc(100vh - 90px);
     background: linear-gradient(180deg, #1a5490 0%, #2874a6 100%);
     padding: 40px 30px;
-    box-shadow: 4px 0 15px rgba(26, 84, 144, 0.3);
     overflow-y: auto;
 }
 
@@ -49,24 +71,25 @@ header h1 {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    background: white;
     margin: 0 auto 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
     border: 5px solid white;
-    font-size: 60px;
-    color: white;
-    font-weight: bold;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .identity {
-    background: rgba(255, 255, 255, 0.9);
+    background: white; /* Efek blur (backdrop-filter) dihapus */
     padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .identity h3 {
@@ -83,38 +106,19 @@ header h1 {
     font-size: 14px;
 }
 
-.identity strong {
-    color: #34495e;
-}
-
 main {
     margin-left: 300px;
     padding: 40px 60px;
     max-width: 900px;
-    height: calc(100vh - 90px);
-    overflow-y: auto;
-}
-
-main::-webkit-scrollbar {
-    width: 10px;
-}
-
-main::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-}
-
-main::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #2874a6 0%, #3498db 100%);
-    border-radius: 10px;
+    /* Custom scrollbar (-webkit-scrollbar) dihapus total */
 }
 
 .content-box {
     background: white;
     padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(40, 116, 166, 0.2);
+    border-radius: 15px;
     margin-bottom: 30px;
+    /* Box-shadow dihapus agar lebih polos */
 }
 
 .content-box h2 {
@@ -129,9 +133,11 @@ main::-webkit-scrollbar-thumb {
     color: #444;
     line-height: 1.9;
     margin-bottom: 20px;
-    text-align: justify;
+    text-align: left; /* Rata kiri lebih natural untuk pemula daripada justify */
     font-size: 16px;
 }
+
+/* Pengaturan Layar Kecil */
 @media (max-width: 768px) {
     .sidebar {
         position: relative;
@@ -147,10 +153,9 @@ main::-webkit-scrollbar-thumb {
         flex-direction: column;
         margin-top: 90px;
     }
-}
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }
